@@ -3,11 +3,11 @@ import Header from "./_components/header"
 import { Button } from "./_components/ui/button"
 import { Input } from "./_components/ui/input"
 import Image from "next/image"
-import { Card, CardContent } from "./_components/ui/card"
 import { db } from "./_lib/prisma"
 import BarbershopItem from "./_components/barbershop-item"
 import { quickSearchOptions } from "./_constants/search"
 import BookingItem from "./_components/booking-item"
+import Footer from "./_components/footer"
 
 const Home = async () => {
   //chamar seu banco de dados
@@ -78,16 +78,7 @@ const Home = async () => {
           ))}
         </div>
       </div>
-      <footer>
-        <Card>
-          <CardContent className="px-5 py-6">
-            <p className="text-sm text-gray-400">
-              © 2023 Copyrightspan{" "}
-              <span className="font-bold"> FSW Barber</span>
-            </p>
-          </CardContent>
-        </Card>
-      </footer>
+      <Footer />
     </div>
   )
 }
