@@ -38,7 +38,8 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
           alt={barbershop.name}
           src={barbershop?.imageUrl}
           fill
-          className="object-cover"
+          /*           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+           */ className="object-cover"
         />
 
         <Button
@@ -92,7 +93,11 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
         <h2 className="text-xs font-bold uppercase text-gray-400">Serviços</h2>
         <div className="space-y-3">
           {barbershop.services.map((service) => (
-            <ServiceItem key={service.id} service={service} />
+            <ServiceItem
+              key={service.id}
+              barbershop={barbershop}
+              service={service}
+            />
           ))}
         </div>
       </div>
