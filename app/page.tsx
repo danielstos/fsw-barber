@@ -48,8 +48,11 @@ const Home = async () => {
 
       <Header />
       <div className="p-5">
-        <h2 className="text-xl font-bold">Olá, {session?.user?.name}!</h2>
-
+        <h2 className="text-xl font-bold">
+          {" "}
+          <span className="text-xl font-light">Olá, </span>
+          {session?.user ? session.user.name : "Bem vindo"}!
+        </h2>
         <p className="text-xl font-bold">
           <span className="capitalize">
             {" "}
@@ -85,7 +88,6 @@ const Home = async () => {
             </Button>
           ))}
         </div>
-
         {/* Banner */}
         <div className="relative mt-6 h-[150px] w-full">
           <Image
@@ -104,7 +106,6 @@ const Home = async () => {
             <BookingItem key={booking.id} booking={booking} />
           ))}
         </div>
-
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           Recomendados
         </h2>
@@ -113,7 +114,6 @@ const Home = async () => {
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
-
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           Populares
         </h2>
