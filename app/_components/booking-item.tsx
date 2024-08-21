@@ -31,6 +31,7 @@ import {
 import { toast } from "sonner"
 import { deleteBooking } from "../_actions/delete-booking"
 import { useState } from "react"
+import BookingSummary from "./book-summary"
 
 interface BookingItemProps {
   booking: Prisma.BookingGetPayload<{
@@ -134,44 +135,15 @@ const BookingItem = ({ booking }: BookingItemProps) => {
           >
             {isConfirmed ? "Confirmado" : "Finalizado"}
           </Badge>
-          <Card className="mb-6 mt-3">
-            <CardContent className="space-y-3 p-3">
-              <div className="flex items-center justify-between">
-                <h2 className="font-bold">{booking.service.name} </h2>
-                <p className="text-sm font-bold text-primary">
-                  {Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(Number(booking.service.price))}
-                </p>
-              </div>
 
-              <div className="flex items-center justify-between">
-                <h2 className="font-sm text-gray-400">Data </h2>
-                <p className="text-sm">
-                  {format(booking.date, "dd", {
-                    locale: ptBR,
-                  })}{" "}
-                  <span>de</span>{" "}
-                  <span className="capitalize">
-                    {format(booking.date, "MMMM", { locale: ptBR })}
-                  </span>
-                </p>
-              </div>
+          <div className="mb-3 mt-6">
+            <BookingSummary
+              barbershop={barbershop}
+              service={booking.service}
+              selectedDate={booking.date}
+            />
+          </div>
 
-              <div className="flex items-center justify-between">
-                <h2 className="font-sm text-gray-400">Horário </h2>
-                <p className="text-sm">
-                  {format(booking.date, "HH:mm", { locale: ptBR })}
-                </p>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <h2 className="font-sm text-gray-400">Barbearia </h2>
-                <p className="text-sm">{barbershop.name}</p>
-              </div>
-            </CardContent>
-          </Card>
           <div className="space-y-3">
             {barbershop.phones.map((phone, index) => (
               <PhoneItem key={index} phone={phone} />

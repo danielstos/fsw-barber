@@ -56,46 +56,22 @@ shadcn/
     ├── sheet.tsx        # Painel deslizante para informações ou controles adicionais.
     └── sonner.tsx       # Componente personalizado, possivelmente para notificações.
 ```
-# Modelagem do Banco de Dados
-```plaintext
+#  Banco de Dados
+<small>
+<pre>
 +------------------+    +------------------+    +------------------+    +------------------+
-|      User        |    |     Booking      |    |  Barbershop      |    |  Barbershop      |
-+------------------+    +------------------+    |      Service     |    |                  |
-| ID (PK)          |    | ID (PK)          |    +------------------+    +------------------+
-| Name             |    | Service ID (FK)  |    | ID (PK)          |    | ID (PK)          |
-| E-mail           |    | Barbershop ID (FK)|   | Barbershop ID (FK)|   | Name             |
-+------------------+    | User ID (FK)     |    | Name             |    | Description      |
-                        | Date             |    | Description      |    | Address          |
-                        +------------------+    | Image URL        |    | Image URL        |
-                                                 | Price            |    +------------------+
-                                                 +------------------+
-
-
-```
-| Tabela               | Coluna           | Tipo         | Descrição                          |
-|----------------------|------------------|--------------|------------------------------------|
-| **User**             | ID               | Primary Key  | Identificador único do usuário     |
-|                      | Name             | String       | Nome do usuário                    |
-|                      | E-mail           | String       | E-mail do usuário                  |
-|                      |                  |              |                                    |
-| **Barbershop**       | ID               | Primary Key  | Identificador único da barbearia   |
-|                      | Name             | String       | Nome da barbearia                  |
-|                      | Description      | Text         | Descrição da barbearia             |
-|                      | Address          | String       | Endereço da barbearia              |
-|                      | Image URL        | String       | URL da imagem da barbearia         |
-|                      |                  |              |                                    |
-| **Barbershop Service** | ID             | Primary Key  | Identificador único do serviço     |
-|                      | Barbershop ID    | Foreign Key  | ID da barbearia associada          |
-|                      | Name             | String       | Nome do serviço                    |
-|                      | Description      | Text         | Descrição do serviço               |
-|                      | Image URL        | String       | URL da imagem do serviço           |
-|                      | Price            | Decimal      | Preço do serviço                   |
-|                      |                  |              |                                    |
-| **Booking**          | ID               | Primary Key  | Identificador único do agendamento |
-|                      | Service ID       | Foreign Key  | ID do serviço associado            |
-|                      | Barbershop ID    | Foreign Key  | ID da barbearia associada          |
-|                      | User ID          | Foreign Key  | ID do usuário associado            |
-|                      | Date             | DateTime     | Data do agendamento                |
+|      User        |    |  Barbershop      |    |  Barbershop      |    |     Booking      |
++------------------+    +------------------+    |      Service     |    +------------------+
+| ID (PK)          |    | ID (PK)          |    +------------------+    | ID (PK)          |
+| Name             |    | Name             |    | ID (PK)          |    | Service ID (FK)  |
+| E-mail           |    | Description      |    | Barbershop ID (FK)|   | Barbershop ID (FK)|
++------------------+    | Address          |    | Name             |    | User ID (FK)     |
+                        | Image URL        |    | Description      |    | Date             |
+                        +------------------+    | Image URL        |    +------------------+
+                                                | Price            |
+                                                +------------------+
+</pre>
+</small>
 
 
 ## Instalação
