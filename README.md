@@ -36,7 +36,21 @@ Link do  projeto em funcionamento: [FSW Barber](https://fsw-barber-omega-gold.ve
 
 
 
+##  Componentes principais
+```plaintext
+_components/
+├── barbershop-item.tsx    # Exibe informações de uma barbearia, incluindo imagem, nome, endereço e um botão de reserva.
+├── book-summary.tsx       # Resume uma reserva, exibindo detalhes como serviço, barbearia, data e hora.
+├── booking-item.tsx       # Exibe e gerencia informações de uma reserva, incluindo funcionalidade de cancelamento.
+├── footer.tsx             # Rodapé do site.
+├── header.tsx             # Cabeçalho do site.
+├── phone-item.tsx         # Representa um número de telefone com um botão "Copiar".
+├── search.tsx             # Renderiza um formulário para pesquisa de barbearias.
+├── service-item.tsx       # Representa um item de serviço.
+├── sidebar-sheet.tsx      # Menu lateral que exibe informações do usuário e opções de menu relevantes.
+└── sign-in-dialog.tsx     # Diálogo de login que permite ao usuário fazer login com o Google.
 
+```
 
 ##  Componentes ShadCN
 
