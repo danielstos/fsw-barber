@@ -39,16 +39,46 @@ Link do  projeto em funcionamento: [FSW Barber](https://fsw-barber-omega-gold.ve
 ##  Componentes principais
 ```plaintext
 _components/
-├── barbershop-item.tsx    # Exibe informações de uma barbearia, incluindo imagem, nome, endereço e um botão de reserva.
-├── book-summary.tsx       # Resume uma reserva, exibindo detalhes como serviço, barbearia, data e hora.
-├── booking-item.tsx       # Exibe e gerencia informações de uma reserva, incluindo funcionalidade de cancelamento.
-├── footer.tsx             # Rodapé do site.
-├── header.tsx             # Cabeçalho do site.
-├── phone-item.tsx         # Representa um número de telefone com um botão "Copiar".
-├── search.tsx             # Renderiza um formulário para pesquisa de barbearias.
-├── service-item.tsx       # Representa um item de serviço.
-├── sidebar-sheet.tsx      # Menu lateral que exibe informações do usuário e opções de menu relevantes.
-└── sign-in-dialog.tsx     # Diálogo de login que permite ao usuário fazer login com o Google.
+├── barbershop-item.tsx
+│   ├── Descrição: Exibe detalhes de uma barbearia (imagem, nome, endereço, classificação).
+│   └── Uso: Lista de barbearias, acesso à página de reservas.
+│
+├── book-summary.tsx
+│   ├── Descrição: Mostra o resumo de um agendamento (serviço, barbearia, data, hora).
+│   └── Uso: Revisão antes de confirmar um agendamento.
+│
+├── booking-item.tsx
+│   ├── Descrição: Exibe detalhes de um agendamento (data, hora, serviço, barbearia).
+│   └── Uso: Lista de agendamentos (histórico de reservas).
+│
+├── footer.tsx
+│   ├── Descrição: Rodapé com links, contato e informações de direitos autorais.
+│   └── Uso: Exibido no final de todas as páginas.
+│
+├── header.tsx
+│   ├── Descrição: Cabeçalho com logotipo e links de navegação.
+│   └── Uso: Exibido no topo de todas as páginas.
+│
+├── phone-item.tsx
+│   ├── Descrição: Mostra informações de contato por telefone.
+│   └── Uso: Exibição de detalhes de contato.
+│
+├── search.tsx
+│   ├── Descrição: Permite busca por barbearias ou serviços.
+│   └── Uso: Busca rápida na plataforma.
+│
+├── service-item.tsx
+│   ├── Descrição: Exibe detalhes de um serviço (nome, descrição, preço).
+│   └── Uso: Página de detalhes de barbearia, reservas.
+│
+├── sidebar-sheet.tsx
+│   ├── Descrição: Menu lateral com opções de navegação e login/logout.
+│   └── Uso: Navegação em dispositivos móveis ou interfaces compactas.
+│
+└── sign-in-dialog.tsx
+    ├── Descrição: Diálogo para login via Google.
+    └── Uso: Acesso a funcionalidades que requerem autenticação.
+
 
 ```
 
@@ -70,7 +100,7 @@ shadcn/
     ├── sheet.tsx        # Painel deslizante para informações ou controles adicionais.
     └── sonner.tsx       # Componente personalizado, possivelmente para notificações.
 ```
-#  Banco de Dados
+## Banco de Dados
 <small>
 <pre>
 +------------------+    +------------------+    +------------------+    +------------------+
