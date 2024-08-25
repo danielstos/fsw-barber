@@ -69,11 +69,11 @@ const BookingItem = ({ booking }: BookingItemProps) => {
 
   return (
     <Sheet open={isSheetOpen} onOpenChange={handleSheetOpenChange}>
-      <SheetTrigger className="w-full min-w-[90%]">
+      <SheetTrigger className="w-full min-w-[90%] md:min-w-[100%]">
         <Card className="min-w-[90%]">
           <CardContent className="flex justify-between p-0">
             {/* Esquerda */}
-            <div className="flex flex-col gap-2 py-5 pl-5">
+            <div className="flex flex-col gap-3 py-5 pl-5">
               <Badge
                 className="w-fit"
                 variant={isConfirmed ? "default" : "secondary"}
@@ -90,7 +90,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               </div>
             </div>
             {/* Direita */}
-            <div className="flex flex-col items-center justify-center border-l-2 border-solid px-5">
+            <div className="flex flex-col items-center justify-center border-l-2 border-solid px-10">
               <p className="text-sm capitalize">
                 {format(booking.date, "MMMM", { locale: ptBR })}{" "}
               </p>
