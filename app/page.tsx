@@ -28,7 +28,9 @@ const Home = async () => {
     <div>
       {/* header */}
 
-      <Header />
+      <div className="md:mx-auto md:w-[1520px]">
+        <Header />
+      </div>
       <div className="p-5 md:mx-auto md:flex md:max-w-[1440px] md:flex-col md:items-center">
         <div className="grid grid-cols-1 gap-4 md:h-[463px] md:w-[1440px] md:grid-cols-2 md:gap-[128px] md:p-[64px_128px]">
           <div>

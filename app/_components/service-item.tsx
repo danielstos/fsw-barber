@@ -215,7 +215,9 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
 
                 <SheetContent className="px-0">
                   <SheetHeader>
-                    <SheetTitle>Fazer Reservar</SheetTitle>
+                    <SheetTitle className="text-center">
+                      Fazer Reservar
+                    </SheetTitle>
                   </SheetHeader>
                   <div className="border-b border-solid py-5">
                     <Calendar
