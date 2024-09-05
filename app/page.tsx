@@ -28,7 +28,7 @@ const Home = async () => {
     <div>
       {/* header */}
 
-      <div className="md:mx-auto md:w-[1520px]">
+      <div className="md:mx-auto md:w-[100%]">
         <Header />
       </div>
       <div className="p-5 md:mx-auto md:flex md:max-w-[1440px] md:flex-col md:items-center">

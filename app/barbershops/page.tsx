@@ -14,15 +14,17 @@ const BarbershopsPage = async ({ searchParams }: BarbershopsPageProps) => {
   const babershops = await getBarbershops(searchParams)
 
   return (
-    <div>
+    <div className="mx-auto min-h-screen">
       <Header />
 
       <div className="my-6 px-5">
         <Search />
       </div>
-      <div className="px-5">
-        <h2>Resultados para {searchParams?.title || searchParams?.service} </h2>
-        <div className="grid grid-cols-2 gap-4">
+      <div className="p-5 md:mx-auto md:max-w-[1440px]">
+        <h2 className="mb-4 md:text-lg">
+          Resultados para {searchParams?.title || searchParams?.service}{" "}
+        </h2>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
           {babershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}

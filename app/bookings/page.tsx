@@ -32,7 +32,7 @@ const Bookings = async () => {
   return (
     <>
       <Header />
-      <div className="md:flex md:h-auto md:w-[1440px] md:flex-col md:items-start md:gap-[40px] md:px-[256px] md:pb-0 md:pt-[40px]">
+      <div className="md:container md:flex md:h-auto md:w-[1440px] md:flex-col md:items-start md:gap-[40px] md:px-[256px] md:pb-0 md:pt-[40px]">
         <BookingsContainer bookings={allBookings} />
       </div>
     </>
