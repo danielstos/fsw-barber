@@ -31,7 +31,7 @@ const Home = async () => {
       <div className="md:mx-auto md:w-[100%]">
         <Header />
       </div>
-      <div className="p-5 md:mx-auto md:flex md:max-w-[1440px] md:flex-col md:items-center">
+      <div className="container p-5 md:mx-auto md:flex md:flex-col md:items-center">
         <div className="grid grid-cols-1 gap-4 md:h-[463px] md:w-[1440px] md:grid-cols-2 md:gap-[128px] md:p-[64px_128px]">
           <div>
             <h2 className="text-xl font-bold">
@@ -91,7 +91,7 @@ const Home = async () => {
               </>
             )}
             {/* Agendamento */}
-            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+            <div className="flex gap-4 overflow-x-auto md:hidden [&::-webkit-scrollbar]:hidden">
               {confirmedBookings.map((booking) => (
                 <BookingItem
                   key={booking.id}
@@ -99,6 +99,17 @@ const Home = async () => {
                 />
               ))}
             </div>
+            {/* Link apenas para telas grandes */}
+            <Link href="/bookings" className="hidden md:block">
+              <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+                {confirmedBookings.map((booking) => (
+                  <BookingItem
+                    key={booking.id}
+                    booking={JSON.parse(JSON.stringify(booking))}
+                  />
+                ))}
+              </div>
+            </Link>
           </div>
           <div>
             <h2 className="mb-4 mt-6 text-xs font-bold uppercase text-gray-400">
