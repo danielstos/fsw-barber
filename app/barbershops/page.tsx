@@ -5,6 +5,7 @@ import { getBarbershops } from "../bookings/_data/get-barbershops"
 
 interface BarbershopsPageProps {
   searchParams: {
+    search?: string
     title?: string
     service?: string
   }

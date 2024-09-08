@@ -26,6 +26,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
       <div className="hidden md:block md:w-[100%]">
         <HeaderSearch />
       </div>
+
       <div className="md:flex md:h-[1113px] md:w-[1440px] md:flex-row md:items-start md:gap-[40px] md:p-[40px_128px_0]">
         <div className="md:flex md:h-[1073px] md:w-[758px] md:flex-col md:items-start md:gap-[40px] md:p-0">
           {/* Imagem */}

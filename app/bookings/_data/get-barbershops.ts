@@ -4,24 +4,27 @@ import { db } from "@/app/_lib/prisma"
 export const getBarbershops = async (searchParams?: {
   title?: string
   service?: string
+  search?: string
 }) => {
+  const searchTitle = searchParams?.title || searchParams?.search
+  const searchService = searchParams?.service || searchParams?.search
   return await db.barbershop.findMany({
     where: {
       OR: [
-        searchParams?.title
+        searchTitle
           ? {
               name: {
-                contains: searchParams?.title,
+                contains: searchTitle,
                 mode: "insensitive",
               },
             }
           : {},
-        searchParams?.service
+        searchService
           ? {
               services: {
                 some: {
                   name: {
-                    contains: searchParams?.service,
+                    contains: searchService,
                     mode: "insensitive",
                   },
                 },
